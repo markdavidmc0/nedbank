@@ -28,6 +28,7 @@ class FraudDetector:
         :param expenditure: daily expense transactions
         :return: number of fraud warnings per user
         """
+        # TODO refactor algorithm to work n*log(n). Is currently n^2*log(n)
         messages = 0
         current_day = 0
         lower_range = 0
