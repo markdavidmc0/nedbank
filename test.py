@@ -9,8 +9,7 @@ from fraud_detection import FraudDetector
 class FraudDetectionTest(unittest.TestCase):
     """Tests anomaly cases for fraud detection on transaction spending"""
 
-    @staticmethod
-    def test_trailing_case_01() -> None:
+    def test_trailing_case_01(self) -> None:
         """Tests 5 trailing days with unique expenditure"""
 
         days = 5
@@ -18,10 +17,9 @@ class FraudDetectionTest(unittest.TestCase):
 
         run = FraudDetector()
         output = run.detector(days, expenditure)
-        print(output)
+        self.assertEqual(output, 2)
 
-    @staticmethod
-    def test_trailing_case_02() -> None:
+    def test_trailing_case_02(self) -> None:
         """Tests 4 trailing days with unique expenditure"""
 
         days = 4
@@ -29,7 +27,33 @@ class FraudDetectionTest(unittest.TestCase):
 
         run = FraudDetector()
         output = run.detector(days, expenditure)
-        print(output)
+        self.assertEqual(output, 0)
+
+    # def test_trailing_case_03(self) -> None:
+    #     """Tests 100000 trailing days with unique expenditure"""
+    #
+    #     days = 100000
+    #     with open('P2-input1.csv', newline='') as f:
+    #         expenditure = f.read()
+    #         expenditure = expenditure.split(' ')
+    #         expenditure = list(map(lambda x: int(x), expenditure))
+    #
+    #     run = FraudDetector()
+    #     output = run.detector(days, expenditure)
+    #     self.assertEqual(output, 0)
+    #
+    # def test_trailing_case_04(self) -> None:
+    #     """Tests 190000 trailing days with unique expenditure"""
+    #
+    #     days = 190000
+    #     with open('P2-input2.csv', newline='') as f:
+    #         expenditure = f.read()
+    #         expenditure = expenditure.split(' ')
+    #         expenditure = list(map(lambda x: int(x), expenditure))
+    #
+    #     run = FraudDetector()
+    #     output = run.detector(days, expenditure)
+    #     self.assertEqual(output, 0)
 
 
 if __name__ == "__main__":
