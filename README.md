@@ -4,4 +4,3 @@ attempts to count messages that should be sent to users with particularly high s
 1) Unzip nedbank.zip file
 2) Open nedbank folder in IDE
 3) Run test.py to see tests cases running
-
