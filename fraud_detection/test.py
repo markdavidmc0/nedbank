@@ -108,7 +108,7 @@ class FraudDetectionTest(unittest.TestCase):
 
         days = 10000
         # read in expenditure list from file
-        with open('P2-input1.csv', newline='') as f:
+        with open('fraud_detection/P2-input1.csv', newline='') as f:
             expenditure = f.read()
             expenditure = expenditure.split(' ')
             expenditure = list(map(lambda x: int(x), expenditure))
@@ -131,7 +131,7 @@ class FraudDetectionTest(unittest.TestCase):
 
         days = 80000
         # read in expenditure list from file
-        with open('P2-input2.csv', newline='') as f:
+        with open('fraud_detection/P2-input2.csv', newline='') as f:
             expenditure = f.read()
             expenditure = expenditure.split(' ')
             expenditure = list(map(lambda x: int(x), expenditure))
